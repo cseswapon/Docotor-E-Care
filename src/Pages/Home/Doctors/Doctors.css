@@ -1,0 +1,144 @@
+.first-dr {
+  position: relative;
+  overflow: hidden;
+}
+.social-media {
+  font-size: 25px;
+  color: white;
+  margin: 0px auto;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.438);
+  height: 100%;
+  width: 100%;
+  left: -100%;
+  box-sizing: border-box;
+  transition: all 0.5s;
+  padding: 5px;
+}
+.first-dr:hover .social-media {
+  left: 0%;
+}
+.social-media i {
+  margin: 10px;
+  cursor: pointer;
+}
+.sec-dr {
+  position: relative;
+  overflow: hidden;
+}
+.social-media2 {
+  font-size: 25px;
+  color: white;
+  margin: 0px auto;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.438);
+  height: 100%;
+  width: 100%;
+  left: -100%;
+  box-sizing: border-box;
+  transition: all 0.5s;
+  padding: 5px;
+}
+.sec-dr:hover .social-media2 {
+  left: 0%;
+}
+.social-media2 i {
+  margin: 10px;
+  cursor: pointer;
+}
+.the-dr {
+  position: relative;
+  overflow: hidden;
+}
+.social-media3 {
+  font-size: 25px;
+  color: white;
+  margin: 0px auto;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.438);
+  height: 100%;
+  width: 100%;
+  left: -100%;
+  box-sizing: border-box;
+  transition: all 0.5s;
+  padding: 5px;
+}
+.the-dr:hover .social-media3 {
+  left: 0%;
+}
+.social-media3 i {
+  margin: 10px;
+  cursor: pointer;
+}
+.fou-dr {
+  position: relative;
+  overflow: hidden;
+}
+.social-media4 {
+  font-size: 25px;
+  color: white;
+  margin: 0px auto;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.438);
+  height: 100%;
+  width: 100%;
+  left: -100%;
+  box-sizing: border-box;
+  transition: all 0.5s;
+  padding: 5px;
+}
+.fou-dr:hover .social-media4 {
+  left: 0%;
+}
+.social-media4 i {
+  margin: 10px;
+  cursor: pointer;
+}
+.fiv-dr {
+  position: relative;
+  overflow: hidden;
+}
+.social-media5 {
+  font-size: 25px;
+  color: white;
+  margin: 0px auto;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.438);
+  height: 100%;
+  width: 100%;
+  left: -100%;
+  box-sizing: border-box;
+  transition: all 0.5s;
+  padding: 5px;
+}
+.fiv-dr:hover .social-media5 {
+  left: 0%;
+}
+.social-media5 i {
+  margin: 10px;
+  cursor: pointer;
+}
+.six-dr {
+  position: relative;
+  overflow: hidden;
+}
+.social-media6 {
+  font-size: 25px;
+  color: white;
+  margin: 0px auto;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.438);
+  height: 100%;
+  width: 100%;
+  left: -100%;
+  box-sizing: border-box;
+  transition: all 0.5s;
+  padding: 5px;
+}
+.six-dr:hover .social-media6 {
+  left: 0%;
+}
+.social-media6 i {
+  margin: 10px;
+  cursor: pointer;
+}
