@@ -1,0 +1,14 @@
+.logo-icon {
+  font-size: 50px;
+  color: #1976d3;
+}
+.background-color {
+  background: rgb(236, 241, 248);
+}
+.nav-menu a {
+  text-decoration: none;
+  font-size: 20px;
+  /* font-weight: bold; */
+  margin: 10px;
+  color: rgb(8, 81, 129);
+}
