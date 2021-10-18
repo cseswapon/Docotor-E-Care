@@ -9,7 +9,7 @@ import dr6 from '../../../images/doctor/dr-6.jpg';
 import './Doctors.css'
 const Doctors = () => {
     return (
-        <div className="my-5">
+        <div className="my-3">
             <Row xs={1} md={3} className="g-4">
                 <Col>
                     <Card className="first-dr">

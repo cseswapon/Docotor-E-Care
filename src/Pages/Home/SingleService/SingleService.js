@@ -1,9 +1,9 @@
 import React from 'react';
-import { Card, Col } from 'react-bootstrap';
+import { Button, Card, Col } from 'react-bootstrap';
 
 const SingleService = (props) => {
     const {name, image,details } = props.services;
-    console.log(props);
+    // console.log(props);
     return (
         <Col>
             <Card>
@@ -14,6 +14,7 @@ const SingleService = (props) => {
                     {details.slice(0,50)}
                 </Card.Text>
                 </Card.Body>
+                <Button variant="primary">Details</Button>
             </Card>
         </Col>
     );
