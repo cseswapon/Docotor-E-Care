@@ -11,7 +11,7 @@ import img5 from '../../../images/patient/p-5.jpeg'
 const Client = () => {
     return (
         <div className="container my-3 mb-5">
-            <h1 className="text-danger text-center mb-4"><i class="fas fa-procedures text-primary"></i> Our Patient <i class="fas fa-procedures text-primary"></i></h1>
+            <h1 className="text-danger text-center mb-4"><i className="fas fa-procedures text-primary"></i> Our Patient <i className="fas fa-procedures text-primary"></i></h1>
             <OwlCarousel
             className='owl-theme'
             items="5"
@@ -20,19 +20,19 @@ const Client = () => {
             dots
             loop
             >
-                <div class='item'>
+                <div className='item'>
                     <img src={img1} alt="not found" style={{height:"100px"}} />
                 </div>
-                <div class='item'>
+                <div className='item'>
                     <img src={img2} alt="not found" style={{height:"100px"}} />
                 </div>
-                <div class='item'>
+                <div className='item'>
                     <img src={img3} alt="not found" style={{height:"100px"}} />
                 </div>
-                <div class='item'>
+                <div className='item'>
                     <img src={img4} alt="not found" style={{height:"100px"}} />
                 </div>
-                <div class='item'>
+                <div className='item'>
                     <img src={img5} alt="not found" style={{height:"100px"}} />
                 </div>
             </OwlCarousel>

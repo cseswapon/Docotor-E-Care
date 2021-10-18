@@ -1,9 +1,14 @@
 import React from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
+import { useHistory } from 'react-router';
 
 const SingleService = (props) => {
-    const {name, image,details } = props.services;
+    const {id,name, image,details } = props.services;
     // console.log(props);
+    const history = useHistory();
+    const handelDetails = () => {
+        history.push(`/home/${id}`)
+    }
     return (
         <Col>
             <Card>
@@ -14,7 +19,7 @@ const SingleService = (props) => {
                     {details.slice(0,50)}
                 </Card.Text>
                 </Card.Body>
-                <Button variant="primary">Details</Button>
+                <Button onClick={handelDetails} variant="primary">Details</Button>
             </Card>
         </Col>
     );

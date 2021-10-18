@@ -1,5 +1,6 @@
 import { BrowserRouter as Router,Switch,Route } from 'react-router-dom';
 import './App.css';
+import Details from './Pages/Details/Details';
 import Footer from './Pages/Footer/Footer';
 import Header from './Pages/Header/Header/Header';
 import Home from './Pages/Home/Home/Home';
@@ -16,6 +17,9 @@ function App() {
           </Route>
           <Route exact path="/home">
             <Home></Home>
+          </Route>
+          <Route exact path="/home/:homeId">
+            <Details></Details>
           </Route>
           <Route exact path="*">
             <Notfound></Notfound>
