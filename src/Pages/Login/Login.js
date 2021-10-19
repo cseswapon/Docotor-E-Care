@@ -1,22 +1,46 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import useFirebase from '../../../src/Hooks/useFirebase';
+import { Link,useLocation,useHistory } from 'react-router-dom';
+import useAuth from '../../Hooks/useAuth';
 const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const { googleSingin, gitSingin, facebookSingin, singin,error } = useFirebase();
+    const { googleSingin, gitSingin, facebookSingin, singin,error } = useAuth()
     const emailHandel = e => {
         setEmail(e.target.value);
     }
     const passHandel = e => {
         setPassword(e.target.value)
     }
+    console.log(error);
+    const location = useLocation()
+    const history = useHistory()
+    const redirect_uri = location?.state?.from || '/home';
     const handelFrom = e => {
         e.preventDefault();
-        singin(email, password);
+        singin(email, password)
+            .then(() => {
+            history.push(redirect_uri)
+        }).catch((error)=>{
+            console.log(error.message);
+        })
         e.target.reset()
     }
-    console.log(error);
+    const googlesinginhandel = () => {
+        googleSingin()
+        .then(() => {
+            history.push(redirect_uri);
+        }).catch((error) => {
+            console.log(error.message);
+        })
+    }
+    const handelgithub = () => {
+        gitSingin()
+        .then(() => {
+            history.push(redirect_uri)
+        }).catch((error)=>{
+            console.log(error.message);
+        })
+    }
     return (
         <div className="container w-50 my-5">
             <h1 className="fw-bold text-primary">Please Login</h1>
@@ -33,9 +57,9 @@ const Login = () => {
             </form>
             <h4 className="text-center text-danger">----- or -----</h4>
             <div className="text-center">
-                <button onClick={googleSingin} className="btn btn-warning m-2"><i className="fab fa-google-plus text-light"></i></button>
-                <button onClick={facebookSingin} className="btn btn-primary m-2"><i className="fab fa-facebook text-light"></i></button>
-                <button onClick={gitSingin} className="btn btn-danger m-2"><i className="fab fa-github text-light"></i></button>
+                <button onClick={googlesinginhandel} className="btn btn-warning m-2"><i className="fab fa-google-plus text-light"></i></button>
+                {/* <button onClick={facebookSingin} className="btn btn-primary m-2"><i className="fab fa-facebook text-light"></i></button> */}
+                <button onClick={handelgithub} className="btn btn-danger m-2"><i className="fab fa-github text-light"></i></button>
                 <p>Create Account & Singup <Link to="/singup">Singup</Link></p>
             </div>
         </div>

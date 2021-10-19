@@ -20,7 +20,7 @@ const Details = () => {
         const finding = dtl.find(services => services.id == homeId)
         // console.log(finding);
         setFindings(finding);
-    },[dtl])
+    }, [dtl])
     return (
         <div className="card mb-3 mx-auto my-5 mb-5" style={{maxWidth: "540px"}}>
             <div className="row g-0">

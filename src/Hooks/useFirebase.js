@@ -11,12 +11,7 @@ const useFirebase = () => {
     const auth = getAuth();
     // google authntiaction 
     const googleSingin = () => {
-        signInWithPopup(auth, googleProvider)
-        .then((result) => {
-            setUser(result.user);
-        }).catch((error) => {
-            setError(error.message);
-        });
+        return signInWithPopup(auth, googleProvider)
     }
     // facebook authentiaction
     const facebookSingin = () => {
@@ -30,12 +25,7 @@ const useFirebase = () => {
     }
     // git authentiaction
     const gitSingin = () => {
-        signInWithPopup(auth, gitProvider)
-        .then((result) => {
-            setUser(result.user)
-        }).catch((error) => {
-            setError(error.message)
-        });
+        return signInWithPopup(auth, gitProvider)
     }
     // email and password authentiaction
     const loginfromhandel = (name,email, pass) => {
@@ -56,15 +46,8 @@ const useFirebase = () => {
     }
     // login email password
     const singin = (email,password) => {
-        signInWithEmailAndPassword(auth, email, password)
-        .then((result) => {
-            setUser(result.user);
-        })
-        .catch((error) => {
-            setError(error.message);
-        });
-
-        }
+        return signInWithEmailAndPassword(auth, email, password)
+    }
     // observer
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {

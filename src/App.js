@@ -1,5 +1,6 @@
 import { BrowserRouter as Router,Switch,Route } from 'react-router-dom';
 import './App.css';
+import ContextProvider from './Context/ContextProvider';
 import About from './Pages/About/About';
 import Details from './Pages/Details/Details';
 import Footer from './Pages/Footer/Footer';
@@ -8,14 +9,16 @@ import Help from './Pages/Help/Help';
 import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login';
 import Notfound from './Pages/Notfound/Notfound';
+import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import Singup from './Pages/Singup/Singup';
 import Support from './Pages/Support/Support';
 
 function App() {
   return (
     <div>
-      <Router>
-      <Header></Header>
+      <ContextProvider>
+        <Router>
+        <Header></Header>
         <Switch>
           <Route exact path ="/">
             <Home></Home>
@@ -32,9 +35,9 @@ function App() {
           <Route exact path="/help">
             <Help></Help>
           </Route>
-          <Route exact path="/home/:homeId">
+          <PrivateRoute exact path="/home/:homeId">
             <Details></Details>
-          </Route>
+          </PrivateRoute>
           <Route exact path="/login">
             <Login></Login>
           </Route>
@@ -47,6 +50,7 @@ function App() {
         </Switch>
       <Footer></Footer>        
       </Router>
+      </ContextProvider>
     </div>
   );
 }

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import useFirebase from '../../../Hooks/useFirebase';
+import useAuth from '../../../Hooks/useAuth';
 import './NavMenu.css';
 const NavMenu = () => {
-    const { user,logout } = useFirebase();
+    const { user, logout } = useAuth();
     // console.log(user);
     return (
         <Navbar className="background-color" expand="lg" sticky="top">

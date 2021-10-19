@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import useFirebase from '../../Hooks/useFirebase';
+import useAuth from '../../Hooks/useAuth';
 const Singup = () => {
-    const { googleSingin, gitSingin, facebookSingin, loginfromhandel,user} = useFirebase();
+    const { googleSingin, gitSingin, facebookSingin, loginfromhandel } = useAuth();
     const [name,setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -20,7 +20,6 @@ const Singup = () => {
         loginfromhandel(name,email, password);
         e.target.reset();
     }
-    // console.log(user);
     return (
         <div className="container w-50 my-5">
             <h1 className="fw-bold text-primary">Please Sing Up</h1>
@@ -41,8 +40,8 @@ const Singup = () => {
             </form>
             <h4 className="text-center text-danger">----- or -----</h4>
             <div className="text-center">
-                <button onClick={googleSingin} className="btn btn-warning m-2"><i className="fab fa-google-plus text-light"></i></button>
-                <button onClick={facebookSingin} className="btn btn-primary m-2"><i className="fab fa-facebook text-light"></i></button>
+                <button onClick={googleSingin} className="btn btn-primary m-2"><i className="fab fa-google-plus text-light"></i></button>
+                {/* <button onClick={facebookSingin} className="btn btn-primary m-2"><i className="fab fa-facebook text-light"></i></button> */}
                 <button onClick={gitSingin} className="btn btn-danger m-2"><i className="fab fa-github text-light"></i></button>
                 <p>Already Your Account <Link to="/login">Login</Link></p>
             </div>
