@@ -9,9 +9,10 @@ const NavMenu = () => {
     return (
         <Navbar className="background-color" expand="lg" sticky="top">
             <Container>
-                <Navbar.Brand href="#home" className="align-items-center d-flex">
+                <NavLink style={{textDecoration:"none"}} to="/home" className="align-items-center d-flex">
                     <i className="fas fa-briefcase-medical logo-icon"></i>
-                    <span className="fw-bold fs-1 ms-3 text-black-50">Doctor E Care</span></Navbar.Brand>
+                    <span className="fw-bold fs-1 ms-3 text-black-50">Doctor E Care</span>
+                </NavLink>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ms-auto nav-menu align-items-center">

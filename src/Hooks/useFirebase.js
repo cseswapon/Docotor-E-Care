@@ -8,9 +8,11 @@ const useFirebase = () => {
     const gitProvider = new GithubAuthProvider();
     const [user, setUser] = useState({});
     const [error, setError] = useState({});
+    const [isLoading, setIsLoading] = useState(true);
     const auth = getAuth();
     // google authntiaction 
     const googleSingin = () => {
+        setIsLoading(true);
         return signInWithPopup(auth, googleProvider)
     }
     // facebook authentiaction
@@ -25,10 +27,12 @@ const useFirebase = () => {
     }
     // git authentiaction
     const gitSingin = () => {
+        setIsLoading(true)
         return signInWithPopup(auth, gitProvider)
     }
     // email and password authentiaction
-    const loginfromhandel = (name,email, pass) => {
+    const loginfromhandel = (name, email, pass) => {
+        setIsLoading(true)
         createUserWithEmailAndPassword(auth, email, pass)
         .then((result) => {
             setUser(result.user)
@@ -36,16 +40,18 @@ const useFirebase = () => {
         })
         .catch((error) => {
             setError(error.message);
-        })
+        }).finally(() => setIsLoading(false));
     }
     // setuser name
     const setUsername = (names) => {
+        setIsLoading(true)
         updateProfile(auth.currentUser, {
             displayName:names
-        }).then(()=>{})
+        }).then(()=>{}).finally(() => setIsLoading(false));
     }
     // login email password
     const singin = (email,password) => {
+        setIsLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
     // observer
@@ -56,15 +62,17 @@ const useFirebase = () => {
         } else {
             setError({});
         }
+            setIsLoading(false);
         });
     }, [])
     // sing out 
     const logout = () => {
+        setIsLoading(true)
         signOut(auth).then(() => {
             setUser({});
         }).catch((error) => {
             setError(error.message)
-        });
+        }).finally(() => setIsLoading(false));
     }
     return {
         user,
@@ -74,7 +82,9 @@ const useFirebase = () => {
         gitSingin,
         loginfromhandel,
         logout,
-        singin
+        singin,
+        isLoading,
+        setIsLoading
     }
 }
 export default useFirebase;

@@ -4,7 +4,7 @@ import useAuth from '../../Hooks/useAuth';
 const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const { googleSingin, gitSingin, facebookSingin, singin,error } = useAuth()
+    const { googleSingin, gitSingin, facebookSingin, singin,error,setIsLoading } = useAuth()
     const emailHandel = e => {
         setEmail(e.target.value);
     }
@@ -22,7 +22,7 @@ const Login = () => {
             history.push(redirect_uri)
         }).catch((error)=>{
             console.log(error.message);
-        })
+        }).finally(() => setIsLoading(false));
         e.target.reset()
     }
     const googlesinginhandel = () => {
@@ -31,7 +31,7 @@ const Login = () => {
             history.push(redirect_uri);
         }).catch((error) => {
             console.log(error.message);
-        })
+        }).finally(() => setIsLoading(false));
     }
     const handelgithub = () => {
         gitSingin()
@@ -39,19 +39,19 @@ const Login = () => {
             history.push(redirect_uri)
         }).catch((error)=>{
             console.log(error.message);
-        })
+        }).finally(() => setIsLoading(false));
     }
     return (
         <div className="container w-50 my-5">
             <h1 className="fw-bold text-primary">Please Login</h1>
             <form onSubmit={handelFrom}>
             <div className="mb-3">
-                <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-                <input type="email" className="form-control" id="exampleInputEmail1" onBlur={emailHandel} aria-describedby="emailHelp" placeholder="enter your email" />
+                <label htmlFor="exampleInputEmail1" className="form-label"><i class="fas fa-envelope text-primary"></i> Email address</label>
+                <input type="email" className="form-control" id="exampleInputEmail1" required onBlur={emailHandel} aria-describedby="emailHelp" placeholder="enter your email" />
             </div>
             <div className="mb-3">
-                <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-                <input type="password" className="form-control" id="exampleInputPassword1" onBlur={passHandel} placeholder="enter your password" />
+                <label htmlFor="exampleInputPassword1" className="form-label"><i class="fas fa-lock text-primary"></i> Password</label>
+                <input type="password" className="form-control" id="exampleInputPassword1" required onBlur={passHandel} placeholder="enter your password" />
             </div>
                 <button type="submit" className="btn btn-primary">Login</button>
             </form>

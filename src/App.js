@@ -50,7 +50,7 @@ function App() {
         </Switch>
       <Footer></Footer>        
       </Router>
-      </ContextProvider>
+    </ContextProvider>
     </div>
   );
 }

@@ -25,16 +25,16 @@ const Singup = () => {
             <h1 className="fw-bold text-primary">Please Sing Up</h1>
             <form onSubmit={handelFrom}>
             <div className="mb-3">
-                <label htmlFor="exampleInputName" className="form-label">Name</label>
-                <input type="text" className="form-control" id="exampleInputName" onBlur={nameHandel} aria-describedby="emailHelp" placeholder="enter your name" />
+                <label htmlFor="exampleInputName" className="form-label"><i class="fas fa-user text-primary"></i> Name</label>
+                <input type="text" className="form-control" id="exampleInputName" required onBlur={nameHandel} aria-describedby="emailHelp" placeholder="enter your name" />
             </div>
             <div className="mb-3">
-                <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-                <input type="email" className="form-control" id="exampleInputEmail1" onBlur={emailHandel} aria-describedby="emailHelp" placeholder="enter your email" />
+                <label htmlFor="exampleInputEmail1" className="form-label"><i class="fas fa-envelope text-center text-primary"></i> Email address</label>
+                <input type="email" className="form-control" id="exampleInputEmail1" required onBlur={emailHandel} aria-describedby="emailHelp" placeholder="enter your email" />
             </div>
             <div className="mb-3">
-                <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-                <input type="password" className="form-control" id="exampleInputPassword1" onBlur={passHandel} placeholder="enter your password" />
+                <label htmlFor="exampleInputPassword1" className="form-label"><i class="fas fa-lock text-primary"></i> Password</label>
+                <input type="password" className="form-control" id="exampleInputPassword1" required onBlur={passHandel} placeholder="enter your password" />
             </div>
             <button type="submit" className="btn btn-primary">Sing Up</button>
             </form>
