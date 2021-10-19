@@ -5,7 +5,7 @@ import SingleService from '../SingleService/SingleService';
 
 const Services = () => {
     const { service } = useService();
-    console.log(service);
+    // console.log(service);
     return (
         <div className="container service-holder my-3">
             <h1 className="text-center text-danger"><i className="fas fa-stethoscope all-doctor"></i> My services <i className="fas fa-stethoscope all-doctor"></i></h1>

@@ -1,4 +1,4 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged,FacebookAuthProvider,GithubAuthProvider,createUserWithEmailAndPassword} from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged,FacebookAuthProvider,GithubAuthProvider,createUserWithEmailAndPassword,signInWithEmailAndPassword,updateProfile} from "firebase/auth";
 import { useEffect, useState } from "react";
 import authInitialize from "../Firebase/Firebase.init";
 const useFirebase = () => {
@@ -38,15 +38,33 @@ const useFirebase = () => {
         });
     }
     // email and password authentiaction
-    const loginfromhandel = (email, pass) => {
+    const loginfromhandel = (name,email, pass) => {
         createUserWithEmailAndPassword(auth, email, pass)
         .then((result) => {
             setUser(result.user)
+            setUsername(name);
         })
         .catch((error) => {
             setError(error.message);
         })
     }
+    // setuser name
+    const setUsername = (names) => {
+        updateProfile(auth.currentUser, {
+            displayName:names
+        }).then(()=>{})
+    }
+    // login email password
+    const singin = (email,password) => {
+        signInWithEmailAndPassword(auth, email, password)
+        .then((result) => {
+            setUser(result.user);
+        })
+        .catch((error) => {
+            setError(error.message);
+        });
+
+        }
     // observer
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
@@ -56,7 +74,7 @@ const useFirebase = () => {
             setError({});
         }
         });
-    },[])
+    }, [])
     // sing out 
     const logout = () => {
         signOut(auth).then(() => {
@@ -72,7 +90,8 @@ const useFirebase = () => {
         facebookSingin,
         gitSingin,
         loginfromhandel,
-        logout
+        logout,
+        singin
     }
 }
 export default useFirebase;

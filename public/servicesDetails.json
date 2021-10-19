@@ -1,0 +1,40 @@
+{
+    "allInfo":[
+    {
+        "id":1,
+        "name":"X-Ray",
+        "image":"https://images.pexels.com/photos/4270367/pexels-photo-4270367.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "details":"X-ray beams pass through your body, and they are absorbed in different amounts depending on the density of the material they pass through. Dense materials, such as bone and metal, show up as white on X-rays. The air in your lungs shows up as black. Fat and muscle appear as shades of gray."
+    },
+    {
+        "id":2,
+        "name":"CT Scan",
+        "image":"https://images.pexels.com/photos/7089395/pexels-photo-7089395.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "details":"A CT scan has many uses, but it's particularly well-suited to quickly examine people who may have internal injuries from car accidents or other types of trauma. A CT scan can be used to visualize nearly all parts of the body and is used to diagnose disease or injury as well as to plan medical, surgical or radiation treatment."
+    },
+    {
+        "id":3,
+        "name":"Automatic Biochemistry Analyzer",
+        "image":"https://images.pexels.com/photos/3825368/pexels-photo-3825368.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "details":"Seamaty SD1 chemistry analyzer is a fully automated clinical chemistry system designed for the on-site testing, offering cost-effective solution for small and medium laboratory settings. Small size and easy operation, this chemistry analyzer allows healthcare practitioners to perform routine clinical chemistry tests with accurate results in 12 minutes."
+    },
+    {
+        "id":4,
+        "name":"Video Endoscopy Machine",
+        "image":"https://5.imimg.com/data5/GN/AU/MY-7277713/video-endoscopy-500x500.jpg",
+        "details":"For each of the following industrial endoscopes, we have provided you with the most detailed borescope inspection scope introduction. Here are detailed data on the best endoscope, best endoscope inspection camera, and portable endoscope. If you want to know each endoscope definition’s specific data, you can click on the link to read it."
+    },
+    {
+        "id":5,
+        "name":"Ultrasonography",
+        "image":"https://www.radiologyinfo.org/-/media/radinfo/gallery-items/images/r-to-t/radiologist-doing-sonogram.ashx",
+        "details":"Listen to pronunciation. (UL-truh-soh-NAH-gruh-fee) A procedure that uses high-energy sound waves to look at tissues and organs inside the body. The sound waves make echoes that form pictures of the tissues and organs on a computer screen (sonogram)."
+    },
+    {
+        "id":6,
+        "name":"E.C.G",
+        "image":"https://www.theengineeringprojects.com/wp-content/uploads/2017/08/Introduction-to-ECG_3-2.jpg",
+        "details":"An electrocardiogram (ECG) is a simple test that can be used to check your heart's rhythm and electrical activity. Sensors attached to the skin are used to detect the electrical signals produced by your heart each time it beats."
+    }
+]
+}
