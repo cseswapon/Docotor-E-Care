@@ -33,14 +33,7 @@ const useFirebase = () => {
     // email and password authentiaction
     const loginfromhandel = (name, email, pass) => {
         setIsLoading(true)
-        createUserWithEmailAndPassword(auth, email, pass)
-        .then((result) => {
-            setUser(result.user)
-            setUsername(name);
-        })
-        .catch((error) => {
-            setError(error.message);
-        }).finally(() => setIsLoading(false));
+        return createUserWithEmailAndPassword(auth, email, pass)
     }
     // setuser name
     const setUsername = (names) => {
@@ -77,6 +70,8 @@ const useFirebase = () => {
     return {
         user,
         error,
+        setUsername,
+        setError,
         googleSingin,
         facebookSingin,
         gitSingin,

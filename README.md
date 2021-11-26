@@ -9,9 +9,6 @@
 
 #### Our Web Site Working
 
-- Medical Basic Web Site
-- Many Doctor List and Details
-- Our Web Site Many Services Details information
-- Our Web Site Secure
-- Our Web Site SPA(single page application)
-- 24 Hours Help Service Active.
+- It is a kind of related website. You can take services to keep your health good.
+- If the user has to register before receiving the service, then the user will be able to receive the service.
+- Users will be able to see different types of doctors and communicate if they want.

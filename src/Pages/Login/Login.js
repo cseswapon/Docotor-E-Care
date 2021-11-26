@@ -4,14 +4,14 @@ import useAuth from '../../Hooks/useAuth';
 const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const { googleSingin, gitSingin, facebookSingin, singin,error,setIsLoading } = useAuth()
+    const { googleSingin, gitSingin, singin,error,setIsLoading } = useAuth()
     const emailHandel = e => {
         setEmail(e.target.value);
     }
     const passHandel = e => {
         setPassword(e.target.value)
     }
-    console.log(error);
+    // console.log(error);
     const location = useLocation()
     const history = useHistory()
     const redirect_uri = location?.state?.from || '/home';

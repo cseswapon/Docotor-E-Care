@@ -1,11 +1,30 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation,useHistory } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 const Singup = () => {
-    const { googleSingin, gitSingin, facebookSingin, loginfromhandel } = useAuth();
+    const { googleSingin, gitSingin, loginfromhandel,setIsLoading,setUsername,setUser,setError } = useAuth();
     const [name,setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const location = useLocation();
+    const history = useHistory();
+    const redirect_uri = location?.state?.from || '/home';
+    const googlesinginhandel = () => {
+        googleSingin()
+        .then(() => {
+            history.push(redirect_uri);
+        }).catch((error) => {
+            console.log(error.message);
+        }).finally(() => setIsLoading(false));
+    }
+    const handelgithub = () => {
+        gitSingin()
+        .then(() => {
+            history.push(redirect_uri)
+        }).catch((error)=>{
+            console.log(error.message);
+        }).finally(() => setIsLoading(false));
+    }
     const nameHandel = e => {
         setName(e.target.value);
     }
@@ -15,9 +34,17 @@ const Singup = () => {
     const passHandel = e => {
         setPassword(e.target.value)
     }
+    console.log(name,email,password);
     const handelFrom = e => {
         e.preventDefault();
-        loginfromhandel(name,email, password);
+        loginfromhandel(name, email, password)
+        .then((result) => {
+            setUsername(name);
+            setUser(result.user)
+        })
+        .catch((error) => {
+            setError(error.message);
+        }).finally(() => setIsLoading(false));
         e.target.reset();
     }
     return (
@@ -40,9 +67,9 @@ const Singup = () => {
             </form>
             <h4 className="text-center text-danger">----- or -----</h4>
             <div className="text-center">
-                <button onClick={googleSingin} className="btn btn-primary m-2"><i className="fab fa-google-plus text-light"></i></button>
+                <button onClick={googlesinginhandel} className="btn btn-primary m-2"><i className="fab fa-google-plus text-light"></i></button>
                 {/* <button onClick={facebookSingin} className="btn btn-primary m-2"><i className="fab fa-facebook text-light"></i></button> */}
-                <button onClick={gitSingin} className="btn btn-danger m-2"><i className="fab fa-github text-light"></i></button>
+                <button onClick={handelgithub} className="btn btn-danger m-2"><i className="fab fa-github text-light"></i></button>
                 <p>Already Your Account <Link to="/login">Login</Link></p>
             </div>
         </div>
